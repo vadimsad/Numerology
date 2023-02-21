@@ -1,0 +1,49 @@
+.quote {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 195px 0 0;
+}
+
+.quote__container {
+  margin: 0 50px;
+  background: rgb(152, 146, 141);
+  padding: 135px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.quote__title {
+  margin: 0;
+  max-width: 700px;
+  font-family: "Piazzolla", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 64px;
+  text-align: center;
+  color: #f2edff;
+}
+
+.quote__subtitle {
+  margin: 0;
+  max-width: 700px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+  color: #f2edff;
+}
+
+.quote__arrow {
+  margin: 50px auto;
+  background: url(../images/logos/quote__arrow.png) center no-repeat;
+  background-size: 70px 70px;
+  width: 70px;
+  height: 70px;
+}

@@ -1,0 +1,17 @@
+.page {
+  /* max-width: 1440px; */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  min-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  /* font-family: "Open Sans", sans-serif, Arial; */
+  /* background: #222027; */
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: rgb(255, 255, 255);
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

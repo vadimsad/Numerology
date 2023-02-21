@@ -1,0 +1,90 @@
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: rgba(34, 32, 39, 1);
+}
+
+.header_overlay {
+  background: rgba(34, 32, 39, 0.8);
+}
+
+.header__container {
+  box-sizing: border-box;
+  width: 100%;
+  /* max-width: 1337px; */
+  margin: 0 auto;
+  padding: 50px 50px;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.header__container_active {
+  padding: 30px 50px;
+}
+
+.header__logo {
+  width: 252px;
+  height: 45px;
+}
+
+.header__links {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.header__link {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  color: #f2edff;
+}
+
+.header__link_selected {
+  font-weight: 700;
+}
+
+.header__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  width: 252px;
+  height: 45px;
+  border: 1px solid #f2edff;
+  border-radius: 8px;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.header__button:hover {
+  opacity: 0.8;
+}
+
+.header__button-logo {
+  width: 24px;
+  height: 22px;
+}
+
+.header__button-text {
+  text-decoration: none;
+  margin: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  color: #f2edff;
+}
