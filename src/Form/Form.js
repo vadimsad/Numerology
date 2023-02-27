@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Form.css";
 import { useForm } from "react-hook-form";
 
@@ -6,10 +6,14 @@ export function Form({ isSubmit }) {
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { isValid, errors },
   } = useForm();
   // const onSubmit = (data) => isSubmit(data);
   const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors.surname]);
 
   return (
     <section className="form" id="form">
@@ -19,26 +23,82 @@ export function Form({ isSubmit }) {
             Чтобы выполнить расшифровку, введите данные
           </h2>
           <div className="form__info">
-            <span className="form__question" />
+            <span className="form__question">
+              <div className="form__triangle"></div>
+              <div className="form__addition">
+                <p className="form__text">
+                  <span>Если вы изменили фамилию</span> (например в браке)
+                  обязательно используйте ту, что была дана при рождении
+                </p>
+                <p className="form__text">
+                  <span>Если в паспорте есть отчество</span> обязательно
+                  используйте его в нумерологическом анализе
+                </p>
+              </div>
+            </span>
+
             <p className="form__subtitle">Как правильно внести данные?</p>
           </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="form__form">
-          <input
-            {...register("surname", { required: true })}
-            placeholder="Фамилия"
-            className="form__input"
-          />
-          <input
-            {...register("name", { required: true })}
-            placeholder="Имя"
-            className="form__input"
-          />
-          <input
-            {...register("stepName", { required: true })}
-            placeholder="Отчество"
-            className="form__input"
-          />
+          <label className="form__label">
+            <input
+              {...register("surname", {
+                required: "Это поле обязательное",
+                minLength: { value: 3, message: "Минимум 3 символа" },
+                pattern: {
+                  value: /[A-Za-zА-Яа-я]{3}/,
+                  message: "Допускаются только буквы",
+                },
+              })}
+              placeholder="Фамилия"
+              className={`form__input ${errors.surname && "form__input_error"}`}
+            />
+            {errors.surname && (
+              <span className="form__input-error">
+                {errors.surname.message}
+              </span>
+            )}
+          </label>
+          <label className="form__label">
+            <input
+              {...register("name", {
+                required: "Это поле обязательное",
+                minLength: { value: 2, message: "Минимум 2 символа" },
+                pattern: {
+                  value: /[A-Za-zА-Яа-я]{2}/,
+                  message: "Допускаются только буквы",
+                },
+              })}
+              placeholder="Имя"
+              className={`form__input ${errors.name && "form__input_error"}`}
+            />
+            {errors.name && (
+              <span className="form__input-error">{errors.name.message}</span>
+            )}
+          </label>
+          <label className="form__label">
+            <input
+              {...register("stepName", {
+                required: false,
+                minLength: { value: 2, message: "Минимум 2 символа" },
+                pattern: {
+                  value: /[A-Za-zА-Яа-я]{2}/,
+                  message: "Допускаются только буквы",
+                },
+              })}
+              placeholder="Отчество"
+              className={`form__input ${
+                errors.stepName && "form__input_error"
+              }`}
+            />
+            {errors.stepName && (
+              <span className="form__input-error">
+                {errors.stepName.message}
+              </span>
+            )}
+          </label>
+
           <input
             type="date"
             {...register("dateBirth", { required: true })}
