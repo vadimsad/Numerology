@@ -12,7 +12,7 @@ export function Form({ isSubmit }) {
   const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
 
   useEffect(() => {
-    console.log(errors);
+    console.log(errors.surname);
   }, [errors.surname]);
 
   return (
@@ -80,7 +80,7 @@ export function Form({ isSubmit }) {
           <label className="form__label">
             <input
               {...register("stepName", {
-                required: false,
+                required: "Это поле обязательное",
                 minLength: { value: 2, message: "Минимум 2 символа" },
                 pattern: {
                   value: /[A-Za-zА-Яа-я]{2}/,

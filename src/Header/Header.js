@@ -5,6 +5,7 @@ import telegram from "../images/logos/telegram__logo.png";
 
 export function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isBurgerOpen, setBurgerOpen] = useState(false);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -17,6 +18,10 @@ export function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleOpenBurgerMenu = () => {
+    setBurgerOpen(!isBurgerOpen);
+  };
 
   return (
     <header
@@ -43,6 +48,36 @@ export function Header() {
           <img src={telegram} alt="telegram" className="header__button-logo" />
           <p className="header__button-text">Бот в Telegram</p>
         </a>
+        <div
+          className={`header__menu ${isBurgerOpen && "header__menu_active"}`}
+        >
+          <a className="header__menu-link" href="/">
+            Квадрат Пифагора
+          </a>
+          <a className="header__menu-link" href="/">
+            Матрица судьбы
+          </a>
+          <a className="header__menu-link" href="/">
+            Статьи
+          </a>
+          <a className="header__menu-link" href="/">
+            Личный нумеролог
+          </a>
+          <a
+            className="header__menu-link"
+            href="https://web.telegram.org/k/#@NessFeedbackBot"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Бот в Telegram
+          </a>
+        </div>
+        <span
+          className={`header__burger ${
+            isBurgerOpen && "header__burger_active"
+          }`}
+          onClick={handleOpenBurgerMenu}
+        />
       </div>
     </header>
   );
