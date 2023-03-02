@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Form.css";
 import { useForm } from "react-hook-form";
 
@@ -7,13 +7,9 @@ export function Form({ isSubmit }) {
     register,
     handleSubmit,
     formState: { isValid, errors },
-  } = useForm();
-  // const onSubmit = (data) => isSubmit(data);
-  const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
-
-  useEffect(() => {
-    console.log(errors.surname);
-  }, [errors.surname]);
+  } = useForm({ mode: "onChange" });
+  const onSubmit = (data) => isSubmit(data);
+  // const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
 
   return (
     <section className="form" id="form">
@@ -47,7 +43,7 @@ export function Form({ isSubmit }) {
                 required: "Это поле обязательное",
                 minLength: { value: 3, message: "Минимум 3 символа" },
                 pattern: {
-                  value: /[A-Za-zА-Яа-я]{3}/,
+                  value: /^[A-Za-zА-Яа-я]+$/,
                   message: "Допускаются только буквы",
                 },
               })}
@@ -66,7 +62,7 @@ export function Form({ isSubmit }) {
                 required: "Это поле обязательное",
                 minLength: { value: 2, message: "Минимум 2 символа" },
                 pattern: {
-                  value: /[A-Za-zА-Яа-я]{2}/,
+                  value: /^[A-Za-zА-Яа-я]+$/,
                   message: "Допускаются только буквы",
                 },
               })}
@@ -83,7 +79,7 @@ export function Form({ isSubmit }) {
                 required: "Это поле обязательное",
                 minLength: { value: 2, message: "Минимум 2 символа" },
                 pattern: {
-                  value: /[A-Za-zА-Яа-я]{2}/,
+                  value: /^[A-Za-zА-Яа-я]+$/,
                   message: "Допускаются только буквы",
                 },
               })}
