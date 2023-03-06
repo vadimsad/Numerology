@@ -81,15 +81,22 @@ export const handleEditUserInfo = (user) => {
 // отправка даты рождения на сервер
 export const handleSendingBirthDate = (item) => {
   return fetch(`${BASE_URL}/`, {
+    // mode: "no-cors", // временная заглушка CORS
     method: "POST",
     credentials: "include",
     headers: {
-      // Access-Control-Allow-Origin: *,
-      Accept: "application/json",
+      // dataType: "json",
       "Content-Type": "application/json",
+      Accept: "application/json",
+      Origin: "http://localhost:3000",
+      // "Access-Control-Allow-Origin": "http://localhost:3000",
+      // "Access-Control-Allow-Credentials": "true",
+      // Accept: "application/json",
+      // acceptEncoding: "gzip, deflate, br",
+      // Connection: "keep-alive",
     },
     body: JSON.stringify({
-      date: item,
+      date: item.dateBirth.split("-").reverse().join("."),
     }),
   }).then((res) => handleReturn(res));
 };

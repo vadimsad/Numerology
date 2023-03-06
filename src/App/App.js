@@ -18,9 +18,9 @@ export function App() {
   const [isLoading, setIsLoading] = useState(false);
   // const [isResult, setResult] = useState(false); // времянка для проверки работоспособности
 
-  useEffect(() => {
+  /*   useEffect(() => {
     console.log(data);
-  }, [data]);
+  }, [data]); */
 
   // функция регистрации
   function handleRegister(date) {
