@@ -7,14 +7,22 @@ export function Info({ props, title }) {
     <section className="info">
       <h2 className="info__heading">{title}</h2>
       <div className="info__containers">
-        {props?.mainInfo.map((item) => (
-          <InfoItem props={item} key={item.name} />
+        {props[0].basic.map((item) => (
+          <InfoItem
+            props={item}
+            key={item.name}
+            persons={props[2]?.celebrities}
+          />
         ))}
       </div>
       <h2 className="info__heading">{title}</h2>
       <div className="info__containers">
-        {props?.additionalInfo.map((item) => (
-          <InfoItem props={item} key={item.name} />
+        {props[1].addition.map((item) => (
+          <InfoItem
+            props={item}
+            key={item.name}
+            persons={props[2]?.celebrities}
+          />
         ))}
       </div>
     </section>

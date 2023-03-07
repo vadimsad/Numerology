@@ -85,15 +85,9 @@ export const handleSendingBirthDate = (item) => {
     method: "POST",
     credentials: "include",
     headers: {
-      // dataType: "json",
       "Content-Type": "application/json",
       Accept: "application/json",
-      Origin: "http://localhost:3000",
-      // "Access-Control-Allow-Origin": "http://localhost:3000",
-      // "Access-Control-Allow-Credentials": "true",
-      // Accept: "application/json",
-      // acceptEncoding: "gzip, deflate, br",
-      // Connection: "keep-alive",
+      Origin: "https://dimdimshishkov.github.io/Numerology/",
     },
     body: JSON.stringify({
       date: item.dateBirth.split("-").reverse().join("."),

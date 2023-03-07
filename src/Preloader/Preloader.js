@@ -5,7 +5,7 @@ export default function Preloader() {
   return (
     <section className="preloader">
       <div className="preloader__section">
-        <svg
+        {/* <svg
           width="36px"
           height="36px"
           className="preloader__loading"
@@ -28,7 +28,8 @@ export default function Preloader() {
               ></path>
             </g>
           </g>
-        </svg>
+        </svg> */}
+        <span class="loader"></span>
       </div>
     </section>
   );

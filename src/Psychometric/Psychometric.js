@@ -7,45 +7,50 @@ export function Psychometric({ props }) {
       <div className="psychometric__containers">
         <div className="psychometric__container">
           <div className="psychometric__results">
-            {props?.mainInfo.map((item) => (
+            {props[0]?.basic?.map((item) => (
               <div className="psychometric__result" key={item.name}>
                 <p className="psychometric__heading">
-                  {item.number === +item.number ? item.number : "-"}
+                  {item.number.split("-")[1] === "нет" ? "-" : item.number}
                 </p>
-                <p className="psychometric__subheading">{item.name}</p>
+                <p className="psychometric__subheading">
+                  {item.name?.split(" ")[0]}
+                </p>
               </div>
             ))}
           </div>
 
           <div className="psychometric__verticals">
-            {props?.additionalInfo.slice(0, 3).map((item) => (
+            {props[1]?.addition?.slice(0, 3).map((item) => (
               <div className="psychometric__item" key={item.name}>
                 <p className="psychometric__heading">
-                  {item.number === +item.number ? item.number : "-"}
+                  {item.number.split("-")[1] === "нет" ? "-" : item.number}
                 </p>
-                <p className="psychometric__subheading">{item.name}</p>
+                <p className="psychometric__subheading">
+                  {item.name?.split(" ")[0]}
+                </p>
               </div>
             ))}
           </div>
 
           <div className="psychometric__horizontals">
-            {props?.additionalInfo.slice(3, 6).map((item) => (
+            {props[1]?.addition?.slice(3, 6).map((item) => (
               <div className="psychometric__item" key={item.name}>
                 <p className="psychometric__heading">
-                  {item.number === +item.number ? item.number : "-"}
+                  {item.number.split("-")[1] === "нет" ? "-" : item.number}
                 </p>
-                <p className="psychometric__subheading">{item.name}</p>
+                <p className="psychometric__subheading">
+                  {item.name?.split(" ")[0]}
+                </p>
               </div>
             ))}
           </div>
 
           <div className="psychometric__item">
             <p className="psychometric__heading">
-              {props?.additionalInfo[6].number}/
-              {props?.additionalInfo[7].number}
+              {props[1]?.addition[6]?.number}/{props[1]?.addition[7]?.number}
             </p>
             <p className="psychometric__subheading">
-              {props?.additionalInfo[6].name}/{props?.additionalInfo[7].name}
+              {props[1]?.addition[6]?.name}/{props[1]?.addition[7]?.name}
             </p>
           </div>
         </div>

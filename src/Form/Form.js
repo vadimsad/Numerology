@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { useForm } from "react-hook-form";
 
-export function Form({ isSubmit }) {
+export function Form({ isSubmit, initialInfo }) {
+  const [info, setInfo] = useState({
+    surname: "",
+    name: "",
+    stepName: "",
+    dateBirth: "",
+  });
+
   const {
     register,
     handleSubmit,
     formState: { isValid, errors },
-  } = useForm({ mode: "onChange" });
-  const onSubmit = (data) => isSubmit(data);
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      surname: "",
+      name: "",
+      stepName: "",
+      dateBirth: "",
+    },
+    initialInfo,
+  });
+
+  /* surname: info?.surname,
+      name: info?.name,
+      stepName: info?.stepName,
+      dateBirth: info?.dateBirth, */
+
+  useEffect(() => {
+    // console.log(initialInfo);
+    setInfo(initialInfo);
+  }, [initialInfo]);
+
+  const onSubmit = (data) => {
+    localStorage.setItem("birthDate", JSON.stringify(data));
+    return isSubmit(data);
+  };
   // const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
 
   return (
