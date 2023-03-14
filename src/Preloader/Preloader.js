@@ -29,7 +29,7 @@ export default function Preloader() {
             </g>
           </g>
         </svg> */}
-        <span class="loader"></span>
+        <span className="loader"></span>
       </div>
     </section>
   );

@@ -79,7 +79,7 @@ export const handleEditUserInfo = (user) => {
 };
 
 // отправка даты рождения на сервер
-export const handleSendingBirthDate = (item) => {
+export const handleSendingBirthDate = (data) => {
   return fetch(`${BASE_URL}/`, {
     // mode: "no-cors", // временная заглушка CORS
     method: "POST",
@@ -90,7 +90,7 @@ export const handleSendingBirthDate = (item) => {
       Origin: "https://dimdimshishkov.github.io/Numerology/",
     },
     body: JSON.stringify({
-      date: item.dateBirth.split("-").reverse().join("."),
+      date: data.split("-").reverse().join("."),
     }),
   }).then((res) => handleReturn(res));
 };

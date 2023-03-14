@@ -16,30 +16,13 @@ export function Form({ isSubmit, initialInfo }) {
     formState: { isValid, errors },
   } = useForm({
     mode: "onChange",
-    defaultValues: {
-      surname: "",
-      name: "",
-      stepName: "",
-      dateBirth: "",
-    },
-    initialInfo,
   });
 
-  /* surname: info?.surname,
-      name: info?.name,
-      stepName: info?.stepName,
-      dateBirth: info?.dateBirth, */
-
   useEffect(() => {
-    // console.log(initialInfo);
     setInfo(initialInfo);
   }, [initialInfo]);
 
-  const onSubmit = (data) => {
-    localStorage.setItem("birthDate", JSON.stringify(data));
-    return isSubmit(data);
-  };
-  // const onSubmit = (data) => isSubmit(true); // времянка для проверки работоспособности
+  const onSubmit = (data) => isValid && isSubmit(data);
 
   return (
     <section className="form" id="form">
@@ -66,11 +49,14 @@ export function Form({ isSubmit, initialInfo }) {
             <p className="form__subtitle">Как правильно внести данные?</p>
           </div>
         </div>
+
         <form onSubmit={handleSubmit(onSubmit)} className="form__form">
           <label className="form__label">
             <input
+              type="text"
+              defaultValue={info.surname}
               {...register("surname", {
-                required: "Это поле обязательное",
+                // required: "Это поле обязательное",
                 minLength: { value: 3, message: "Минимум 3 символа" },
                 pattern: {
                   value: /^[A-Za-zА-Яа-я]+$/,
@@ -86,10 +72,13 @@ export function Form({ isSubmit, initialInfo }) {
               </span>
             )}
           </label>
+
           <label className="form__label">
             <input
+              type="text"
+              defaultValue={info.name}
               {...register("name", {
-                required: "Это поле обязательное",
+                // required: "Это поле обязательное",
                 minLength: { value: 2, message: "Минимум 2 символа" },
                 pattern: {
                   value: /^[A-Za-zА-Яа-я]+$/,
@@ -103,10 +92,13 @@ export function Form({ isSubmit, initialInfo }) {
               <span className="form__input-error">{errors.name.message}</span>
             )}
           </label>
+
           <label className="form__label">
             <input
+              type="text"
+              defaultValue={info.stepName}
               {...register("stepName", {
-                required: "Это поле обязательное",
+                // required: "Это поле обязательное",
                 minLength: { value: 2, message: "Минимум 2 символа" },
                 pattern: {
                   value: /^[A-Za-zА-Яа-я]+$/,
@@ -125,11 +117,30 @@ export function Form({ isSubmit, initialInfo }) {
             )}
           </label>
 
-          <input
-            type="date"
-            {...register("dateBirth", { required: true })}
-            className="form__input"
-          />
+          <label className="form__label">
+            <input
+              type="date"
+              defaultValue={info.dateBirth?.split("T")[0]}
+              // onChange={(e) => inputChangeHandle(e)}
+              {...register("dateBirth", {
+                required: "Это поле обязательное",
+                validate: {
+                  lessThanCurrentYear: (v) =>
+                    `${new Date().getFullYear()}` !== v.split("-")[0] ||
+                    "Выберите другую дату",
+                },
+              })}
+              className={`form__input ${
+                errors.dateBirth && "form__input_error"
+              }`}
+            />
+            {errors.dateBirth && (
+              <span className="form__input-error">
+                {errors.dateBirth.message}
+              </span>
+            )}
+          </label>
+
           <button type="submit" className="form__submit" disabled={!isValid}>
             Рассчитать
           </button>

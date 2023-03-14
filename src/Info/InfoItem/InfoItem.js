@@ -7,7 +7,8 @@ export function InfoItem({ props, persons }) {
         <div className="info__main">
           <h2 className="info__title">{props.name?.split(" ")[0]}</h2>
           <div className="info__number">
-            {props?.number.split("-")[1] === "нет" ? "-" : props.number}
+            {/* {props?.number.split("-")[1] === "нет" ? "-" : props.number} */}
+            {props.number}
           </div>
         </div>
         <p className="info__description">{props.description}</p>

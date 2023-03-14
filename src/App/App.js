@@ -8,29 +8,33 @@ import { Psychometric } from "../Psychometric/Psychometric";
 import { Info } from "../Info/Info";
 import { Decoding } from "../Decoding/Decoding";
 import { Footer } from "../Footer/Footer";
-// import result from "../mockData/result.json";
 import { handleSendingBirthDate } from "../utils/MainApi";
 import Preloader from "../Preloader/Preloader";
 
 export function App() {
   const [data, setData] = useState({}); // инфа по психоматрице
-  const [dataInfo, setDataInfo] = useState({}); // загрузка данных с LS
+  const [dataInfo, setDataInfo] = useState({
+    surname: "",
+    name: "",
+    stepName: "",
+    dateBirth: "",
+  }); // загрузка данных с LS
   const [isLoading, setIsLoading] = useState(false);
-  // const [isResult, setResult] = useState(false); // времянка для проверки работоспособности
 
   useEffect(() => {
-    let birthDate = JSON.parse(localStorage.getItem("birthDate"));
-    birthDate && handleSubmitDateBirth(birthDate);
-    birthDate && setDataInfo(birthDate);
+    let savedDate = JSON.parse(localStorage.getItem("userInfo"));
+    savedDate && handleSubmitDateBirth(savedDate);
+    savedDate && setDataInfo(savedDate);
   }, []);
 
   // функция отправки даты рождения на сервер
-  function handleSubmitDateBirth(date) {
+  function handleSubmitDateBirth(data) {
+    localStorage.setItem("userInfo", JSON.stringify(data));
     setIsLoading(true);
-    handleSendingBirthDate(date)
+    handleSendingBirthDate(data.dateBirth)
       .then((res) => {
         const { mainInfo } = res;
-        mainInfo ? setData(mainInfo) : setData({});
+        mainInfo ? setData(mainInfo) : setData({}); // уточнить при последующей работе с бекендом
       })
       .catch((err) => {
         setData({});
@@ -45,19 +49,16 @@ export function App() {
       <Background />
       <Quote />
       <Form isSubmit={handleSubmitDateBirth} initialInfo={dataInfo} />
-      {data.length ? (
-        isLoading ? (
+      {data.length &&
+        (isLoading ? (
           <Preloader />
         ) : (
           <>
             <Psychometric props={data} />
             <Info props={data} title={"Основные качества"} />
           </>
-        )
-      ) : (
-        <Decoding />
-      )}
-
+        ))}
+      <Decoding />
       <Footer />
     </div>
   );
