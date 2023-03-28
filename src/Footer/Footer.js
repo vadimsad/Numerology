@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
 
-export function Footer() {
+export function Footer({ props }) {
   return (
     <footer className="footer">
       <a href="#form" className="footer__button">
-        Рассчитать другую дату
+        {props.length ? "Рассчитать другую дату" : "Рассчитать дату"}
       </a>
       <div className="footer__container">
         <p className="footer__text">2023 Ness Numerology</p>

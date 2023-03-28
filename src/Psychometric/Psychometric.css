@@ -1,15 +1,11 @@
 .psychometric {
-  padding: 100px 0 0;
   box-sizing: border-box;
   margin: 0 auto 80px;
   width: 100%;
   max-width: 1440px;
-}
-
-.psychometric__containers {
+  padding: 100px 50px 0;
   display: flex;
   justify-content: flex-start;
-  margin: 0 50px;
 }
 
 .psychometric__container {

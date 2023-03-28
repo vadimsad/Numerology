@@ -2,20 +2,45 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 195px 0 0;
+  padding: 195px 50px 0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+  .quote {
+    padding: 85px 50px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .quote {
+    padding: 47px 0 0;
+  }
 }
 
 .quote__image {
-  margin: 0 50px;
   padding: 135px 0;
   position: relative;
 }
 
+@media screen and (max-width: 1200px) {
+  .quote__image {
+    padding: 62px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .quote__image {
+    padding: 90px 0;
+  }
+}
+
 .quote__image::after {
   content: "";
-  background-image: url(../images/Banner.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background: url(../images/Banner.png) center no-repeat;
+  border-radius: 8px;
+  /* background-repeat: no-repeat; */
+  /* background-size: 100% 100%; */
   -o-object-fit: cover;
   object-fit: cover;
   z-index: 0;
@@ -42,6 +67,26 @@
   position: relative;
 }
 
+@media screen and (max-width: 1200px) {
+  .quote__container {
+    gap: 60px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .quote__container {
+    gap: 40px;
+    padding: 0 70px;
+  }
+}
+
+.quote__heading {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .quote__title {
   margin: 0;
   max-width: 700px;
@@ -54,7 +99,33 @@
   color: #f2edff;
 }
 
+@media screen and (max-width: 900px) {
+  .quote__title {
+    font-size: 25px;
+    line-height: 36px;
+  }
+}
+
 .quote__subtitle {
+  margin: 0;
+  max-width: 700px;
+  font-family: "Piazzolla", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 64px;
+  text-align: center;
+  color: #f2edff;
+}
+
+@media screen and (max-width: 900px) {
+  .quote__subtitle {
+    font-size: 23px;
+    line-height: 33px;
+  }
+}
+
+.quote__text {
   margin: 0;
   max-width: 700px;
   font-family: "Open Sans";
@@ -66,10 +137,23 @@
   color: #f2edff;
 }
 
+@media screen and (max-width: 900px) {
+  .quote__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
 .quote__arrow {
   margin: 50px auto;
   background: url(../images/logos/quote__arrow.png) center no-repeat;
   background-size: 70px 70px;
   width: 70px;
   height: 70px;
+}
+
+@media screen and (max-width: 1200px) {
+  .quote__arrow {
+    display: none;
+  }
 }

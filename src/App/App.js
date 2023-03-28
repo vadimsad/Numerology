@@ -59,7 +59,7 @@ export function App() {
           </>
         ))}
       <Decoding />
-      <Footer />
+      <Footer props={data} />
     </div>
   );
 }

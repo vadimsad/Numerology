@@ -1,7 +1,9 @@
 .info {
   margin: 30px auto 0;
-  max-width: 1340px;
+  max-width: 1440px;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 50px;
 }
 
 .info__heading {
@@ -22,6 +24,8 @@
   margin: 0 0 60px;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -29,7 +33,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 820px;
+  max-width: 796px;
+  min-width: 679px;
+  width: 100%;
 }
 
 .info__main {
@@ -72,6 +78,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  width: 100%;
+  max-width: 524px;
 }
 
 .info__item {
