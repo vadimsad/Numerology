@@ -7,7 +7,7 @@ export function Decoding() {
   return (
     <section className="decoding">
       <h2 className="decoding__title">
-        Психоматрица Пифагора: как просчитать свою судьбу по дате рождения
+        Психоматрица Пифагора: как просчитать свою судьбу по&nbsp;дате рождения
       </h2>
       <div className="decoding__container">
         <div className="decoding__text-container">
@@ -81,7 +81,7 @@ export function Decoding() {
             <p className="decoding__grid-subheading">Память</p>
           </div>
         </div>
-        <div className="decoding__items-container">
+        <div className="decoding__text-container">
           <p className="decoding__text">
             Для примера возьмем 20 июля 1996 года
           </p>

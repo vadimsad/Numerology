@@ -9,6 +9,8 @@
 .form__heading {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
   max-width: 1319px;
 }
@@ -24,11 +26,24 @@
   color: #f2edff;
 }
 
+@media screen and (max-width: 900px) {
+  .form__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
 .form__info {
   display: flex;
   align-items: center;
   gap: 20px;
   position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .form__info {
+    padding: 15px;
+  }
 }
 
 .form__question {
@@ -85,6 +100,23 @@
   -webkit-text-decoration: dotted;
   text-decoration: dotted;
   font-weight: 700;
+}
+
+.form__subtitle {
+  margin: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #f2edff;
+}
+
+@media screen and (max-width: 1200px) {
+  .form__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+  }
 }
 
 .form__form {
