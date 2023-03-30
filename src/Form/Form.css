@@ -58,10 +58,11 @@
 }
 
 .form__addition {
-  top: 50px;
+  top: 35px;
   left: -200px;
   display: none;
   position: absolute;
+  z-index: 10;
   background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   border-radius: 10px;
@@ -70,7 +71,8 @@
 .form__triangle {
   display: none;
   position: absolute;
-  top: 35px;
+  z-index: 10;
+  top: 20px;
   left: -10px;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;

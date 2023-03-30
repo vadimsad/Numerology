@@ -2,27 +2,19 @@ import React from "react";
 import "./Info.css";
 import { InfoItem } from "./InfoItem/InfoItem";
 
-export function Info({ props, title }) {
+export function Info({ props }) {
   return (
     <section className="info">
-      <h2 className="info__heading">{title}</h2>
+      <h2 className="info__heading">Основные качества</h2>
       <div className="info__containers">
-        {props[0].basic.map((item) => (
-          <InfoItem
-            props={item}
-            key={item.name}
-            persons={props[2]?.celebrities}
-          />
+        {props[0]?.map((item) => (
+          <InfoItem props={item} key={item.name} />
         ))}
       </div>
-      <h2 className="info__heading">{title}</h2>
+      <h2 className="info__heading">Дополнительные качества</h2>
       <div className="info__containers">
-        {props[1].addition.map((item) => (
-          <InfoItem
-            props={item}
-            key={item.name}
-            persons={props[2]?.celebrities}
-          />
+        {props[1].map((item) => (
+          <InfoItem props={item} key={item.name} />
         ))}
       </div>
     </section>

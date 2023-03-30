@@ -72,6 +72,7 @@
   font-size: 20px;
   line-height: 27px;
   color: #f2edff;
+  white-space: pre-line;
 }
 
 .info__items {
@@ -89,8 +90,8 @@
 }
 
 .info__image {
-  width: 116px;
-  height: 116px;
+  max-width: 116px;
+  max-height: 116px;
   border-radius: 8px;
   background-color: #ffffff;
 }

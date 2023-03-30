@@ -38,10 +38,6 @@ export function Form({ isSubmit, initialInfo }) {
                 <span>Если вы изменили фамилию</span> (например в браке)
                 обязательно используйте ту, что была дана при рождении
               </p>
-              <p className="form__text">
-                <span>Если в паспорте есть отчество</span> обязательно
-                используйте его в нумерологическом анализе
-              </p>
             </div>
           </span>
 
@@ -114,7 +110,6 @@ export function Form({ isSubmit, initialInfo }) {
           <input
             type="date"
             defaultValue={info.dateBirth?.split("T")[0]}
-            // onChange={(e) => inputChangeHandle(e)}
             {...register("dateBirth", {
               required: "Это поле обязательное",
               validate: {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Background } from "../Background/Background";
@@ -34,13 +35,17 @@ export function App() {
     handleSendingBirthDate(data.dateBirth)
       .then((res) => {
         const { mainInfo } = res;
-        mainInfo ? setData(mainInfo) : setData({}); // уточнить при последующей работе с бекендом
+        mainInfo ? setData(mainInfo) : setData({});
       })
       .catch((err) => {
         setData({});
         console.log(err);
       })
       .finally(() => setIsLoading(false));
+  }
+
+  function scrollToTop() {
+    scroll.scrollToTop();
   }
 
   return (
@@ -55,11 +60,12 @@ export function App() {
         ) : (
           <>
             <Psychometric props={data} />
-            <Info props={data} title={"Основные качества"} />
+            <Info props={data} />
           </>
         ))}
       <Decoding />
       <Footer props={data} />
+      <button onClick={() => scrollToTop()} className="toTopButton"></button>
     </div>
   );
 }

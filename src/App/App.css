@@ -16,3 +16,25 @@
   flex-direction: column;
   position: relative;
 }
+
+.toTopButton {
+  background: url(../images/logos/toTopButton.svg) center no-repeat;
+  width: 100px;
+  height: 100px;
+  position: -webkit-sticky;
+  position: sticky;
+  right: 100px;
+  bottom: 100px;
+  margin-left: auto;
+  border: none;
+  border-radius: 50%;
+}
+@media screen and (max-width: 1200px) {
+  .toTopButton {
+    background: url(../images/logos/toTopButton_mobile.svg) center no-repeat;
+    width: 50px;
+    height: 50px;
+    right: 40px;
+    bottom: 40px;
+  }
+}
