@@ -7,7 +7,8 @@
 }
 @media screen and (max-width: 1200px) {
   .decoding {
-    margin: 100px auto 0;
+    padding: 0 20px;
+    margin: 0 auto 0;
   }
 }
 
@@ -52,6 +53,9 @@
   .decoding__container {
     margin: 20px auto;
     flex-direction: column;
+  }
+  .decoding .decoding__container:nth-child(4) {
+    margin: 30px auto;
   }
 }
 
@@ -114,6 +118,11 @@
     gap: 30px;
   }
 }
+@media screen and (max-width: 900px) {
+  .decoding__grid-container {
+    gap: 25px;
+  }
+}
 
 .decoding__grid-item {
   width: 150px;
@@ -137,6 +146,7 @@
   .decoding__grid-item {
     width: 100px;
     height: 100px;
+    padding: 8px 0;
   }
 }
 
@@ -159,6 +169,12 @@
   color: #222027;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .decoding__grid-subheading {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
 
 .decoding__items-container {
   margin-left: 34px;
@@ -173,6 +189,12 @@
   padding: 0;
   margin: 0 0 10px 30px;
 }
+@media screen and (max-width: 900px) {
+  .decoding__items {
+    list-style-type: none;
+    margin: 0;
+  }
+}
 
 .decoding__item {
   font-family: "Open Sans";
@@ -183,11 +205,24 @@
   color: #f2edff;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .decoding__item {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 10px;
+  }
+}
 
 .decoding__points {
   margin: 0;
   padding: 0;
   margin: 0 0 10px 30px;
+}
+@media screen and (max-width: 900px) {
+  .decoding__points {
+    list-style-type: none;
+    margin: 0;
+  }
 }
 
 .decoding__point {
@@ -198,6 +233,13 @@
   line-height: 27px;
   color: #f2edff;
   margin: 0;
+}
+@media screen and (max-width: 900px) {
+  .decoding__point {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 10px;
+  }
 }
 
 .decoding__mean-container {

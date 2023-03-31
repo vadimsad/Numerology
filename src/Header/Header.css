@@ -28,7 +28,6 @@
 .header__container_active {
   padding: 20px 50px;
 }
-
 @media screen and (max-width: 1200px) {
   .header__container {
     padding: 20px 50px;
@@ -39,14 +38,12 @@
     padding: 20px 50px;
   }
 }
-
 @media screen and (max-width: 900px) {
   .header__container {
-    padding: 20px 10px;
+    padding: 10px 20px;
   }
-
   .header__container_active {
-    padding: 20px 10px;
+    padding: 10px 20px;
   }
 }
 
@@ -171,7 +168,7 @@
 .header__menu {
   position: absolute;
   top: 0;
-  right: -100%;
+  right: -200%;
   height: 0vh;
   z-index: 5;
   background-color: black;
@@ -181,10 +178,17 @@
   padding: 100px 150px;
   transition: all 0.6s ease;
 }
-
 .header__menu_active {
   right: 0;
   height: 100vh;
+}
+@media screen and (max-width: 900px) {
+  .header__menu {
+    padding: 140px 0;
+  }
+  .header__menu_active {
+    left: 0;
+  }
 }
 
 .header__menu-link {
@@ -196,4 +200,5 @@
   line-height: 27px;
   color: #f2edff;
   text-decoration: none;
+  text-align: center;
 }

@@ -5,6 +5,11 @@
   box-sizing: border-box;
   padding: 0 50px;
 }
+@media screen and (max-width: 900px) {
+  .info {
+    padding: 0 20px 0;
+  }
+}
 
 .info__heading {
   font-family: "Piazzolla";
@@ -15,9 +20,20 @@
   color: #f2edff;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .info__heading {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 
 .info__containers {
   margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .info__containers {
+    margin: 30px 0 0;
+  }
 }
 
 .info-item {
@@ -28,6 +44,11 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+@media screen and (max-width: 900px) {
+  .info-item {
+    margin: 0 0 30px;
+  }
+}
 
 .info__container {
   display: flex;
@@ -36,6 +57,11 @@
   max-width: 796px;
   min-width: 679px;
   width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .info__container {
+    min-width: auto;
+  }
 }
 
 .info__main {
@@ -53,6 +79,12 @@
   color: #f2edff;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .info__title {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
 
 .info__number {
   font-family: "Open Sans";
@@ -62,6 +94,12 @@
   line-height: 34px;
   color: #9747ff;
   margin: 0;
+}
+@media screen and (max-width: 900px) {
+  .info__number {
+    font-size: 20px;
+    line-height: 27px;
+  }
 }
 
 .info__description {
@@ -74,6 +112,12 @@
   color: #f2edff;
   white-space: pre-line;
 }
+@media screen and (max-width: 900px) {
+  .info__description {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
 
 .info__items {
   display: grid;
@@ -81,6 +125,10 @@
   gap: 20px;
   width: 100%;
   max-width: 524px;
+  overflow-x: scroll;
+}
+.info__items::-webkit-scrollbar {
+  display: none;
 }
 
 .info__item {
