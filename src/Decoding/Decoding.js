@@ -83,7 +83,7 @@ export function Decoding() {
         </div>
         <div className="decoding__text-container">
           <p className="decoding__text">
-            Для примера возьмем 20 июля 1996 года
+            Для примера возьмем 20 марта 1981 года
           </p>
           <ol className="decoding__items">
             <li className="decoding__item">

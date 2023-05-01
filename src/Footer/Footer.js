@@ -1,12 +1,12 @@
 import React from "react";
 import "./Footer.css";
 
-export function Footer({ props }) {
+export function Footer({ data, scrollToTop }) {
   return (
     <footer className="footer">
-      <a href="#form" className="footer__button">
-        {props.length ? "Рассчитать другую дату" : "Рассчитать дату"}
-      </a>
+      <button className="footer__button" onClick={() => scrollToTop()}>
+        {data.length ? "Рассчитать другую дату" : "Рассчитать дату"}
+      </button>
       <div className="footer__container">
         <p className="footer__text">2023 Ness Numerology</p>
         <p className="footer__text">

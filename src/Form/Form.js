@@ -13,13 +13,14 @@ export function Form({ isSubmit, initialInfo }) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isValid, errors },
   } = useForm({
     mode: "onChange",
   });
 
   useEffect(() => {
-    setInfo(initialInfo);
+    reset(initialInfo);
   }, [initialInfo]);
 
   const onSubmit = (data) => isValid && isSubmit(data);

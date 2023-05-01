@@ -46,6 +46,12 @@ export function App() {
 
   function scrollToTop() {
     scroll.scrollToTop();
+    setDataInfo({
+      surname: "",
+      name: "",
+      stepName: "",
+      dateBirth: "",
+    });
   }
 
   return (
@@ -64,8 +70,12 @@ export function App() {
           </>
         ))}
       <Decoding />
-      <Footer props={data} />
-      <button onClick={() => scrollToTop()} className="toTopButton"></button>
+      <Footer data={data} scrollToTop={() => scrollToTop()} />
+      {/* убрать для десктопной версии / оставить только на планшетной и мобильной */}
+      <button
+        onClick={() => scroll.scrollToTop()}
+        className="toTopButton"
+      ></button>
     </div>
   );
 }

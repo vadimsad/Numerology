@@ -9,7 +9,8 @@
   /* font-family: "Open Sans", sans-serif, Arial; */
   /* background: #222027; */
   /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
-  background: radial-gradient(50% 50% at 50% 50%, #392f54 0%, #0b0a0c 100%);
+  /* background: radial-gradient(50% 50% at 50% 50%, #392f54 0%, #0b0a0c 100%); */
+  background: #0b0a0c;
   color: rgb(255, 255, 255);
   text-rendering: optimizeLegibility;
   display: flex;
@@ -29,6 +30,7 @@
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 20px #0c0b0d;
+  display: inline;
 }
 @media screen and (max-width: 1200px) {
   .toTopButton {
