@@ -44,7 +44,7 @@ export function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function scrollToTop() {
+  function scrollToForm() {
     scroll.scrollToTop();
     setDataInfo({
       surname: "",
@@ -70,7 +70,7 @@ export function App() {
           </>
         ))}
       <Decoding />
-      <Footer data={data} scrollToTop={() => scrollToTop()} />
+      <Footer data={data} scrollToTop={() => scrollToForm()} />
       {/* убрать для десктопной версии / оставить только на планшетной и мобильной */}
       <button
         onClick={() => scroll.scrollToTop()}
