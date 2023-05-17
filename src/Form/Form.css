@@ -105,7 +105,6 @@
 
 .form__text span {
   margin: 0;
-  -webkit-text-decoration: dotted;
   text-decoration: dotted;
   font-weight: 700;
 }

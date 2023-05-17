@@ -127,9 +127,6 @@
   max-width: 524px;
   overflow-x: scroll;
 }
-.info__items::-webkit-scrollbar {
-  display: none;
-}
 
 .info__item {
   display: flex;

@@ -60,13 +60,14 @@ export function App() {
       <Background />
       <Quote />
       <Form isSubmit={handleSubmitDateBirth} initialInfo={dataInfo} />
+
       {data.length &&
         (isLoading ? (
           <Preloader />
         ) : (
           <>
             <Psychometric props={data} />
-            <Info props={data} />
+            {/* <Info props={data} /> */}
           </>
         ))}
       <Decoding />

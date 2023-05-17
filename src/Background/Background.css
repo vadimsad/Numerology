@@ -179,7 +179,6 @@
     538px 1551px #fff, 1019px 1122px #fff, 665px 1600px #fff, 1666px 1979px #fff,
     1329px 557px #fff, 1213px 1281px #fff, 1784px 1614px #fff, 1766px 30px #fff,
     831px 1591px #fff, 1589px 207px #fff, 1660px 1151px #fff;
-  -webkit-animation: animStar 50s linear infinite;
   animation: animStar 50s linear infinite;
 }
 #stars:after {
@@ -423,7 +422,6 @@
     962px 1762px #fff, 883px 262px #fff, 1095px 1836px #fff, 975px 571px #fff,
     846px 848px #fff, 1378px 250px #fff, 1454px 790px #fff, 1699px 1150px #fff,
     89px 1628px #fff, 741px 282px #fff;
-  -webkit-animation: animStar 100s linear infinite;
   animation: animStar 100s linear infinite;
 }
 #stars2:after {
@@ -516,7 +514,6 @@
     1904px 584px #fff, 198px 637px #fff, 906px 283px #fff, 1671px 18px #fff,
     1741px 1914px #fff, 612px 833px #fff, 1149px 1874px #fff, 97px 1814px #fff,
     1613px 1466px #fff, 496px 724px #fff, 768px 1216px #fff;
-  -webkit-animation: animStar 150s linear infinite;
   animation: animStar 150s linear infinite;
 }
 #stars3:after {
@@ -584,7 +581,6 @@
     1904px 584px #fff, 198px 637px #fff, 906px 283px #fff, 1671px 18px #fff,
     1741px 1914px #fff, 612px 833px #fff, 1149px 1874px #fff, 97px 1814px #fff,
     1613px 1466px #fff, 496px 724px #fff, 768px 1216px #fff;
-  -webkit-animation: animStar 150s linear infinite;
   animation: animStar 150s linear infinite;
 }
 #stars4:after {
@@ -620,15 +616,6 @@
     1904px 584px #fff, 198px 637px #fff, 906px 283px #fff, 1671px 18px #fff,
     1741px 1914px #fff, 612px 833px #fff, 1149px 1874px #fff, 97px 1814px #fff,
     1613px 1466px #fff, 496px 724px #fff, 768px 1216px #fff;
-}
-
-@-webkit-keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
 }
 
 @keyframes animStar {

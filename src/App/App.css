@@ -22,7 +22,6 @@
   background: url(../images/logos/toTopButton.svg) center no-repeat;
   width: 100px;
   height: 100px;
-  position: -webkit-sticky;
   position: sticky;
   right: 100px;
   bottom: 100px;
