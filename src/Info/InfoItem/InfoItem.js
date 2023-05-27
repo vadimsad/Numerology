@@ -7,7 +7,8 @@ export function InfoItem({ props }) {
         <div className="info__main">
           <h2 className="info__title">{props.name?.split(" ")[0]}</h2>
           <div className="info__number">
-            {props?.number.split("-")[1] === "нет" ? "-" : props.number}
+            {/* {props?.number.split("-")[1] === "нет" ? "-" : props.number} */}
+            {props.number || "0"}
           </div>
         </div>
         <p className="info__description">{props.description}</p>
@@ -17,7 +18,7 @@ export function InfoItem({ props }) {
           <div className="info__item" key={item.name}>
             <img
               className="info__image"
-              src={`https://alpetrovv123.pythonanywhere.com${item.photo} `}
+              src={`http://188.225.31.100${item.photo} `}
               alt={item.name}
             />
             <p className="info__name">{item.name}</p>

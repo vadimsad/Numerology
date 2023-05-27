@@ -33,10 +33,7 @@ export function App() {
     localStorage.setItem("userInfo", JSON.stringify(data));
     setIsLoading(true);
     handleSendingBirthDate(data.dateBirth)
-      .then((res) => {
-        const { mainInfo } = res;
-        mainInfo ? setData(mainInfo) : setData({});
-      })
+      .then((res) => setData(res))
       .catch((err) => {
         setData({});
         console.log(err);
@@ -67,12 +64,11 @@ export function App() {
         ) : (
           <>
             <Psychometric props={data} />
-            {/* <Info props={data} /> */}
+            <Info props={data} />
           </>
         ))}
       <Decoding />
       <Footer data={data} scrollToTop={() => scrollToForm()} />
-      {/* убрать для десктопной версии / оставить только на планшетной и мобильной */}
       <button
         onClick={() => scroll.scrollToTop()}
         className="toTopButton"

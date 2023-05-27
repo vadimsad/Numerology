@@ -89,7 +89,7 @@ export const handleSendingBirthDate = (data) => {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Origin: "https://dimdimshishkov.github.io/Numerology/",
+      // Origin: "https://dimdimshishkov.github.io/Numerology/",
     },
     body: JSON.stringify({
       date: data.split("-").reverse().join("."),

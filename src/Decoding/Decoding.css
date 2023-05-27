@@ -123,6 +123,11 @@
     gap: 25px;
   }
 }
+@media screen and (max-width: 380px) {
+  .decoding__grid-container {
+    gap: 15px;
+  }
+}
 
 .decoding__grid-item {
   width: 150px;
@@ -149,6 +154,12 @@
     padding: 8px 0;
   }
 }
+@media screen and (max-width: 380px) {
+  .decoding__grid-item {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 .decoding__grid-heading {
   font-family: "Open Sans";
@@ -158,6 +169,12 @@
   line-height: 41px;
   color: #222027;
   margin: 0;
+}
+@media screen and (max-width: 380px) {
+  .decoding__grid-heading {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
 
 .decoding__grid-subheading {
@@ -173,6 +190,12 @@
   .decoding__grid-subheading {
     font-size: 16px;
     line-height: 22px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .decoding__grid-subheading {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
