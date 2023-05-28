@@ -64,7 +64,7 @@ export function App() {
         ) : (
           <>
             <Psychometric props={data} />
-            <Info props={data} />
+            {/* <Info props={data} /> */}
           </>
         ))}
       <Decoding />

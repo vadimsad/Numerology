@@ -85,7 +85,6 @@ export const handleSendingBirthDate = (data) => {
     // mode: "no-cors", // временная заглушка CORS
     method: "POST",
     // credentials: "include",
-    // credentials: "include",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

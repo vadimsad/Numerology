@@ -64,8 +64,8 @@
 }
 
 .form__addition {
-  top: 35px;
-  left: -200px;
+  bottom: 30px;
+  left: -20px;
   display: none;
   position: absolute;
   z-index: 10;
@@ -74,15 +74,29 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1200px) {
+  .form__addition {
+    bottom: 50px;
+    left: -10px;
+  }
+}
+
 .form__triangle {
   display: none;
   position: absolute;
   z-index: 10;
-  top: 20px;
-  left: -10px;
+  bottom: 20px;
+  left: -5px;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 20px solid rgba(255, 255, 255, 1);
+  border-top: 20px solid rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 1200px) {
+  .form__triangle {
+    bottom: 35px;
+    left: 5px;
+  }
 }
 
 .form__question:hover .form__addition {
@@ -231,6 +245,14 @@
   font-size: 15px;
   line-height: 18px;
   color: #ff0000;
+}
+
+@media screen and (max-width: 1200px) {
+  .form__input-error {
+    top: 55px;
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .form__input_error {

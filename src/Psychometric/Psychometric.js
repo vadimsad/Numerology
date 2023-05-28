@@ -2,6 +2,7 @@ import React from "react";
 import "./Psychometric.css";
 
 export function Psychometric({ props }) {
+  console.log(props);
   return (
     <section className="psychometric">
       <div className="psychometric__container">
