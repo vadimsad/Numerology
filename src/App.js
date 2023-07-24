@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import "./App.css";
-import { Header } from "../Header/Header";
-import { Background } from "../Background/Background";
-import { Quote } from "../Quote/Quote";
-import { Form } from "../Form/Form";
-import { Psychometric } from "../Psychometric/Psychometric";
-import { Info } from "../Info/Info";
-import { Decoding } from "../Decoding/Decoding";
-import { Footer } from "../Footer/Footer";
-import { handleSendingBirthDate } from "../utils/MainApi";
-import Preloader from "../Preloader/Preloader";
+import "./assets/styles/App.css";
+import { Header } from "./components/common/Header/Header";
+import { Background } from "./components/common/Background/Background";
+import { Quote } from "./components/feature-specific/Quote/Quote";
+import { Form } from "./components/feature-specific/Form/Form";
+import { Psychometric } from "./components/feature-specific/Psychometric/Psychometric";
+import { Info } from "./components/feature-specific/Info/Info";
+import { Decoding } from "./components/feature-specific/Decoding/Decoding";
+import { Footer } from "./components/common/Footer/Footer";
+import { handleSendingBirthDate } from "./utils/MainApi";
+import Preloader from "./components/common/Preloader/Preloader";
 
 export function App() {
   const [data, setData] = useState({}); // инфа по психоматрице

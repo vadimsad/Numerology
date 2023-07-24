@@ -142,7 +142,7 @@
 .header__burger {
   display: none;
   display: none;
-  background: url(../images/logos/burger.svg) center no-repeat;
+  background: url(../../../assets/images/logos/burger.svg) center no-repeat;
   background-size: 44px 44px;
   width: 44px;
   height: 44px;
@@ -165,7 +165,7 @@
 }
 
 .header__burger_active {
-  background-image: url(../images/logos/burger_active.svg);
+  background-image: url(../../../assets/images/logos/burger_active.svg);
   background-size: 32px 32px;
 }
 .header__menu {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Decoding.css";
-import Pythagoras from "../images/Pythagoras Picture.png";
-import numbers from "../images/numbers.png";
+import Pythagoras from "../../../assets/images/Pythagoras Picture.png";
+import numbers from "../../../assets/images/numbers.png";
 
 export function Decoding() {
   return (

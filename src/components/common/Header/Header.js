@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../images/logos/header__logo.svg";
-import logo_tablet from "../images/logos/header__logo_tablet.svg";
-import logo_mobile from "../images/logos/header__logo_mobile.svg";
-import telegram from "../images/logos/telegram__logo.png";
+import logo from "../../../assets/images/logos/header__logo.svg";
+import logo_tablet from "../../../assets/images/logos/header__logo_tablet.svg";
+import logo_mobile from "../../../assets/images/logos/header__logo_mobile.svg";
+import telegram from "../../../assets/images/logos/telegram__logo.png";
 
 export function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
