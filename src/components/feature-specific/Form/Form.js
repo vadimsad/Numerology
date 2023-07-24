@@ -110,6 +110,8 @@ export function Form({ isSubmit, initialInfo }) {
         <label className="form__label">
           <input
             type="date"
+            min="01-01-01"
+            max="9999-12-31"
             defaultValue={info.dateBirth?.split("T")[0]}
             {...register("dateBirth", {
               required: "Это поле обязательное",
