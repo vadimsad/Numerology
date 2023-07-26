@@ -54,18 +54,8 @@ export function Header() {
         <div className="header__links">
           <p className="header__link header__link_selected">Квадрат Пифагора</p>
           <p className="header__link">Матрица судьбы</p>
-          <p className="header__link">Статьи</p>
           <p className="header__link">Личный нумеролог</p>
         </div>
-        <a
-          className="header__button"
-          href="https://web.telegram.org/k/#@NessFeedbackBot"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={telegram} alt="telegram" className="header__button-logo" />
-          <p className="header__button-text">Бот в Telegram</p>
-        </a>
         <div
           className={`header__menu ${isBurgerOpen && "header__menu_active"}`}
         >
@@ -76,18 +66,7 @@ export function Header() {
             Матрица судьбы
           </a>
           <a className="header__menu-link" href="/">
-            Статьи
-          </a>
-          <a className="header__menu-link" href="/">
             Личный нумеролог
-          </a>
-          <a
-            className="header__menu-link"
-            href="https://web.telegram.org/k/#@NessFeedbackBot"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Бот в Telegram
           </a>
         </div>
         <span
