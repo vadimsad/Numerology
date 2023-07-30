@@ -4,11 +4,40 @@ import logo from "../../../assets/images/logos/header__logo.svg";
 import logo_tablet from "../../../assets/images/logos/header__logo_tablet.svg";
 import logo_mobile from "../../../assets/images/logos/header__logo_mobile.svg";
 import telegram from "../../../assets/images/logos/telegram__logo.png";
+import Modal from 'react-modal';
+
+const modalStyles = {
+  overlay: {
+    zIndex: 5,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  },
+  content: {
+    minWidth: '300px',
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+Modal.setAppElement('#root');
 
 export function Header() {
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [widthOffset, setWidthOffset] = useState(0);
   const [isBurgerOpen, setBurgerOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const handleScroll = () => {
     setScrollPosition(window.pageYOffset);
@@ -54,7 +83,7 @@ export function Header() {
         <div className="header__links">
           <p className="header__link header__link_selected">Квадрат Пифагора</p>
           <p className="header__link">Матрица судьбы</p>
-          <p className="header__link">Личный нумеролог</p>
+          <button type='button' onClick={openModal} className="header__link">Личный нумеролог</button>
         </div>
         <div
           className={`header__menu ${isBurgerOpen && "header__menu_active"}`}
@@ -65,9 +94,9 @@ export function Header() {
           <a className="header__menu-link" href="/">
             Матрица судьбы
           </a>
-          <a className="header__menu-link" href="/">
+          <button type='modal' onClick={openModal} className="header__menu-link">
             Личный нумеролог
-          </a>
+          </button>
         </div>
         <span
           className={`header__burger ${
@@ -76,6 +105,17 @@ export function Header() {
           onClick={handleOpenBurgerMenu}
         />
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={modalStyles}
+        contentLabel="Example Modal"
+ 
+      >
+        <h2>Hello</h2>
+        <p>I am a modal</p>
+        <button type='button' onClick={closeModal}>close</button>
+      </Modal>
     </header>
   );
 }

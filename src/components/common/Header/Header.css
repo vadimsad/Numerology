@@ -26,6 +26,44 @@
   border-bottom: 1px solid rgba(11, 10, 12, 0.5);
 }
 
+.ReactModal__Content h2{
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.ReactModal__Content p{
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.ReactModal__Content button {
+  padding: 5px;
+  background: black;
+  border-radius: 5px;
+  color: white;
+}
+
+.ReactModal__Content {
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s ease-in-out, scale 0.5s ease-in-out;
+}
+
+.ReactModal__Content--after-open{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close{
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.header__links button.header__link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 /* .header__container_active {
   padding: 20px 50px;
 } */
@@ -82,6 +120,7 @@
 }
 
 .header__link {
+  padding: 5px 10px;
   margin: 0;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
@@ -89,6 +128,8 @@
   font-size: 20px;
   line-height: 27px;
   color: #f2edff;
+  border-radius: 10px;
+  transition: background-color 0.05s ease-in-out;
 }
 
 .header__link_selected {
